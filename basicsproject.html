@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🍸🍸🍸</title>
+    <style>
+      body {
+        background: linear-gradient(135deg, #ececec 0%, #c3cfe2 100%);
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      h1 {
+        color: #0f3057;
+        font-size: 60px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      h2 {
+        color: #385170;
+        display: inline;
+      }
+
+      h3 {
+        color: #142d4c;
+        font-size: 38px;
+        text-align: center;
+      }
+      p {
+        color: #385170;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+        max-width: 80%;
+      }
+
+      button {
+        background-color: #142d4c;
+        border-radius: 30px;
+        box-shadow: 0px 8px 8px rgba(37, 39, 89, 0.08);
+        border: none;
+        color: #ececec;
+        display: block;
+        font-size: 16px;
+        margin: 20px auto;
+        padding: 16px 24px;
+        transition: all 150ms ease-in-out;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+      }
+
+      li {
+        border-radius: 10px;
+        display: inline-block;
+        margin: 0 auto;
+        max-width: 400px;
+        padding: 10px 0;
+        transition: all 150ms ease-in-out;
+      }
+
+      .good:hover {
+        background: #9fd3c7;
+      }
+
+      .bad:hover {
+        background: #ff8e8e;
+      }
+      button:hover {
+        background: #385170;
+        cursor: pointer;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .footer {
+        color: #008891;
+        font-size: small;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>...but is it a martini?</h1>
+    <img
+      src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/020/906/original/martini.jpg?1636730010"
+      alt="dirty martini with way too many olives"
+    />
+
+    <button>So...what are you drinking?</button>
+    <h3></h3>
+
+    <hr />
+
+    <ul>
+      <li class="good">
+        <h2>What is a martini?</h2>
+        <p>
+          The <strong>martini</strong> is a cocktail made with gin (sometimes
+          vodka #thanksianflemming) and vermouth. A cocktail by definition must
+          have at least 3 ingredients, so the garnish is integral to the flavour
+          profile of the martini.
+        </p>
+      </li>
+      <li class="bad">
+        <h2>What <em>isn't</em> a martini?</h2>
+        <p>
+          Sometimes the term "martini" (or the suffix -tini) is used to refer to
+          other cocktails, whose only commonality with the drink is the cocktail
+          glass in which they are served. #appletini #espressomartini
+        </p>
+      </li>
+    </ul>
+    <p>
+      <span class="links">
+        <a href="https://www.diffordsguide.com/g/1121/martini/martini-history"
+          >🍸 the history of the martini</a
+        >
+      </span>
+    </p>
+    <hr />
+    <div class="footer">coded by RP</div>
+    <script>
+      function makeMartini() {
+        let spirit = prompt("What spirit are you using: gin or vodka?");
+        spirit = spirit.toLowerCase();
+        spirit = spirit.trim();
+
+        if (spirit === "gin" || spirit === "vodka") {
+          let vermouth = prompt(
+            "What vermouth are you using: dry, sweet, or both?"
+          );
+          vermouth = vermouth.toLowerCase();
+          vermouth = vermouth.trim();
+
+          let h3 = document.querySelector("h3");
+          if (vermouth === "dry") {
+            h3.innerHTML =
+              "#classic 🍸<br /r>You can garnish with a twist or an olive. Add some olive brine for a dirty martini, or garnish with a pickled onion for a Gibson martini.";
+          } else if (vermouth === "sweet") {
+            h3.innerHTML =
+              "Niiiice, a Gin & It 🍸!<br /r>Add some orange bitters and garnish with an orange twist.";
+          } else if (vermouth === "both") {
+            h3.innerHTML =
+              "Look at you, a Perfect Martini 🍸!<br /r>Garnish with a lemon twist.";
+          } else {
+            alert("❌ That's not a martini. Start again!");
+          }
+        } else {
+          alert("❌ That's not a martini. Start again!");
+        }
+      }
+
+      let martiniButton = document.querySelector("button");
+      martiniButton.addEventListener("click", makeMartini);
+    </script>
+  </body>
+</html>
